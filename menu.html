@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>برغريتو — القائمة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+  <!-- ===== الهيدر ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">برغريتو</a>
+      <nav class="main-nav" id="nav2">
+        <a href="index.html">الرئيسية</a>
+        <a href="menu.html" class="active">القائمة</a>
+        <a href="about.html">من نحن</a>
+        <a href="sources.html">مصادر اللحوم</a>
+        <a href="contact.html">اتصل بنا</a>
+        <!-- تغيير اللغة -->
+        <div class="lang-switch">
+          <button id="lang-toggle" class="lang-btn">
+              <img src="icons/united-states_1.png" alt=""/>
+          </button>
+        </div>
+      </nav>
+      <button id="mobile-toggle-2" class="mobile-toggle" aria-label="القائمة">☰</button>
+    </div>
+  </header>
+
+  <!-- نقاط الولاء -->
+  <div class="loyalty-box">
+    <h3 id="loyaltyTitle">نقاط الولاء</h3>
+    <input id="phoneInput" type="text" placeholder="رقم الجوال">
+    <button id="showBtn" onclick="showPoints()">عرض النقاط</button>
+    <p id="pointsResult"></p>
+  </div>
+
+  <!-- قسم البطل (خلفية واحدة من CSS) -->
+  <div class="hero hero-menu"></div>
+
+  <!-- القائمة -->
+  <div id="menu" class="menu-grid"></div>
+  
+  <script src="js/loyalty.js"></script>
+
+  <!-- ===== صفحة القائمة ===== -->
+  <main class="container menu-page">
+    <h1 class="page-title">القائمة</h1>
+
+    <!-- ===== قسم البرجر ===== -->
+    <section class="menu-section">
+      <h2>البرجر</h2>
+      <div class="menu-grid">
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicBurger/bacon br.jpg" alt="برجر بيكون"/>
+            <div class="mi-info">
+              <h3>برجر بيكون</h3>
+              <p>برجر لحم مع شرائح بيكون وصلصة غنية <br>850 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">29 ر.س</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicBurger/calssic br.jpg" alt="برجر كلاسيك"/>
+            <div class="mi-info">
+              <h3>برجر كلاسيك</h3>
+              <p>برجر دجاج كلاسيكي بنكهة لذيذة <br>690 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">22 ر.س</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicBurger/double.jpg" alt="دابل سماش"/>
+            <div class="mi-info">
+              <h3>دبل سماش</h3>
+              <p>برجر لحم دبل سماش طري ولذيذ <br>780 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">29 ر.س</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicBurger/maple.png" alt="برجر دجاج بالميبل"/>
+            <div class="mi-info">
+              <h3>ميبل برجر دجاج</h3>
+              <p>برجر دجاج مع صلصة الميبل، مزيج حلو ومالح متوازن <br>720 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">22 ر.س</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicBurger/sagnature.jpg" alt="برجر سينيچشر"/>
+            <div class="mi-info">
+              <h3>سجنتشر برجر</h3>
+              <p>برجر مميز بمزيجنا الخاص <br>800 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">29 ر.س</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicBurger/truffle.jpg" alt="برجر الكمأة"/>
+            <div class="mi-info">
+              <h3>ترفل برجر</h3>
+              <p>برجر لحم مع صلصة الترفل <br>820 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">29 ر.س</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== قسم الجوانب ===== -->
+    <section class="menu-section">
+      <h2>الطلبات الجانبية</h2>
+      <div class="menu-grid">
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/stake.jpg" alt="فيلي تشيز ستيك"/>
+            <div class="mi-info">
+              <h3>فيلي تشيز ستيك</h3>
+              <p>شرائح لحم مشوي مع جبن ذائب في خبز طري مليء بالنكهة <br>650 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">24 ر.س</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/poo.jpg" alt="بطاطس كلاسيك"/>
+            <div class="mi-info">
+              <h3>بطاطس كلاسيك</h3>
+              <p>بطاطس مقرمشة ولذيذة <br>350 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">7 ر.س</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/fd.jpg" alt="بطاطس ديناميت"/>
+            <div class="mi-info">
+              <h3>بطاطس ديناميت</h3>
+              <p>بطاطس مقلية مع صلصة ديناميت كريمية حارة <br>520 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">19 ر.س</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/ft.jpg" alt="بطاطس بالكمأة"/>
+            <div class="mi-info">
+              <h3>بطاطس ترفل</h3>
+              <p>بطاطس مقلية مع صلصة الترفل الغنية <br>480 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">19 ر.س</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/salad.jpg" alt="سلطة سيزر"/>
+            <div class="mi-info">
+              <h3>سلطة سيزر</h3>
+              <p>خس طازج مع دجاج، صلصة سيزر وجبن بارميزان <br>310 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">19 ر.س</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/str.jpg" alt="شرائح دجاج"/>
+            <div class="mi-info">
+              <h3>ستربس دجاج</h3>
+              <p>شرائح دجاج مقرمشة ومقلية حتى تصبح ذهبية <br>560 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">18 ر.س</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/taco.jpg" alt="تاكو شرائح الدجاج"/>
+            <div class="mi-info">
+              <h3>تاكو ستربس الدجاج</h3>
+              <p>تاكو محشو بشرائح دجاج مقرمشة وصلصات غنية <br>420 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">15 ر.س</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== قسم المشروبات ===== -->
+    <section class="menu-section">
+      <h2>المشروبات</h2>
+      <div class="menu-grid">
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/drinks.png" alt="المشروبات الغازية"/>
+            <div class="mi-info">
+              <h3>المشروبات الغازية</h3>
+              <p>كولا / حمضيات /  / سفن أب / بيبسي <br>170 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">4 ر.س</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/water.jpeg" alt="ماء"/>
+            <div class="mi-info">
+              <h3>ماء</h3>
+              <p>0 سعرة حرارية</p>
+            </div>
+          </div>
+          <div class="mi-right">1 ر.س</div>
+        </div>
+
+        <!-- ===== قسم خدمة التوصيل ===== -->
+        <section class="chefs-section container">
+          <h2 class="section-title">خدمة التوصيل</h2>
+          <div class="chefs-grid">
+            <a href="https://url.mykeeta.com/dMdmYrez" target="_blank" class="chef-card">
+                <img src="icons/keeta.png" alt=""/>
+              <h3>كييتا</h3>
+              <p>اذهب إلى التطبيق</p>
+            </a>
+
+            <a href="https://hungerstation.go.link/?c=SA&s=c&v=95531&so=mls&adj_t=1sdhhuza_1spi9ypp&adj_og_title=%D8%A8%D9%88%D8%B1%D8%BA%D8%B1%D9%8A%D8%AA%D9%88&adj_og_image=https://images.deliveryhero.io/image/hungerstation/restaurant/logo_ar/5f46c76b8d236183f6dd3d1865fb38ac.jpg" target="_blank" class="chef-card">
+                <img src="icons/hung.png" alt=""/>
+              <h3>هنقرستيشن</h3>
+              <p>اذهب إلى التطبيق</p>
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== الفوتر ===== -->
+  <footer class="site-footer small">
+    <div class="container footer-grid">
+      <div>
+        <h4>برغريتو</h4>
+        <p>جودة وطعم لا يُنسى.</p>
+      </div>
+      <div>
+        <h4>اتصل بنا</h4>
+        <p>الهاتف: 0565087866</p>
+      </div>
+    </div>
+    <div class="container copyright">
+      © <span id="year2"></span> برغريتو
+    </div>
+  </footer>
+
+  <!-- ===== السكربتات ===== -->
+  <script>
+    document.getElementById("year2").textContent = new Date().getFullYear();
+
+    // تبديل اللغة إلى الصفحة الإنجليزية
+    const langBtn = document.getElementById("lang-toggle");
+    langBtn.addEventListener("click", () => {
+      const currentPage = window.location.pathname.split("/").pop();
+      const pages = {
+        "menu.html": "menu-en.html",
+        "index.html": "index-en.html",
+        "about.html": "about-en.html",
+        "sources.html": "sources-en.html",
+        "contact.html": "contact-en.html",
+      };
+      if (pages[currentPage]) {
+        window.location.href = pages[currentPage];
+      } else {
+        window.location.href = "menu-en.html";
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

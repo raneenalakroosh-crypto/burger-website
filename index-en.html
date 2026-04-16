@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Burgrito — Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index-en.html">Burgrito</a>
+
+      <nav class="main-nav" id="nav">
+        <a href="index-en.html" class="active">Home</a>
+        <a href="menu-en.html">Menu</a>
+        <a href="about-en.html">About</a>
+        <a href="sources-en.html">Meat Sources</a>
+        <a href="contact-en.html">Contact</a>
+
+        <!-- زر اللغة -->
+        <div class="lang-switch">
+          <button id="lang-toggle" class="lang-btn" aria-label="Switch Language">
+            
+            <img id="lang-flag" src="icons/flag.png" alt=""/>
+          </button>
+        </div>
+      </nav>
+
+      <!-- زر القائمة للموبايل -->
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Burger the <span>Burgrito</span> Way</h1>
+      <p>Unique flavor, fresh ingredients, and an unforgettable experience — order now or visit us in-store.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="menu-en.html">Order Now</a>
+        <a class="btn btn-outline" href="about-en.html">About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Gallery Section ===== -->
+  <section class="gallery container">
+    <h2 class="section-title">Our Gallery</h2>
+    <div class="gallery-grid">
+      <img src="imagesBurger/b1.jpg" alt="Burger 1">
+      <img src="imagesBurger/b2.jpg" alt="Burger 2">
+      <img src="imagesBurger/b3.jpg" alt="Fries">
+      <img src="imagesBurger/b4.jpg" alt="Burger 3">
+    </div>
+  </section>
+
+  <!-- ===== Featured Section ===== -->
+  <section class="container featured">
+    <h2 class="section-title">Popular Items</h2>
+    <div class="cards">
+      <article class="card">
+        <img src="imagesMost/tk.jpg" alt="Chicken Strips Tacos"/>
+        <div class="card-body">
+          <h3>Chicken Strips Tacos</h3>
+          <p>Crispy chicken strips wrapped in tacos with rich sauces.</p>
+          <div class="price">15 SAR</div>
+        </div>
+      </article>
+      
+      <article class="card">
+        <img src="menuPicBurger/sagnature.jpg" alt="Signature Burger"/>
+        <div class="card-body">
+          <h3>Signature Burger</h3>
+          <p>Our special signature burger with a unique flavor blend.</p>
+          <div class="price">29 SAR</div>
+        </div>
+      </article>
+      
+      <article class="card">
+        <img src="imagesMost/stake.jpg" alt="Philly Cheesesteak"/>
+        <div class="card-body">
+          <h3>Philly Cheesesteak</h3>
+          <p>Grilled beef slices with melted cheese in a soft bun full of flavor.</p>
+          <div class="price">24 SAR</div>
+        </div>
+      </article>
+    </div>
+    <div class="center">
+      <a class="btn btn-primary" href="menu-en.html">View Full Menu</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer small">
+    <div class="container footer-grid">
+      <div>
+        <h4>Burgrito</h4>
+        <p>Quality and unforgettable taste.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <a href="tel:0565087866" class="footer-icon" aria-label="Phone">
+            <img src="icons/phone-call.png" alt="Phone"/>
+          </a>
+          <a href="https://www.instagram.com/burgrito.sa" target="_blank" class="footer-icon" aria-label="Instagram">
+            <img src="icons/instagram.png" alt="Instagram"/>
+          </a>
+          <a href="https://www.tiktok.com/@burgrito.sa" target="_blank" class="footer-icon" aria-label="TikTok">
+            <img src="icons/tik-tok (1).png" alt="TikTok"/>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright">
+      © <span id="year2"></span> Burgrito
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // تحديث السنة تلقائيًا
+    document.getElementById("year2").textContent = new Date().getFullYear();
+
+    // === Language Switch ===
+    const langBtn = document.getElementById("lang-toggle");
+
+    langBtn.addEventListener("click", () => {
+      const currentPage = window.location.pathname.split("/").pop();
+
+      // الصفحات المترابطة بين اللغتين
+      const pages = {
+        "index.html": "index-en.html",
+        "menu.html": "menu-en.html",
+        "about.html": "about-en.html",
+        "sources.html": "sources-en.html",
+        "contact.html": "contact-en.html",
+        "index-en.html": "index.html",
+        "menu-en.html": "menu.html",
+        "about-en.html": "about.html",
+        "sources-en.html": "sources.html",
+        "contact-en.html": "contact.html",
+      };
+
+      if (pages[currentPage]) {
+        window.location.href = pages[currentPage];
+      } else {
+        window.location.href = "index.html";
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

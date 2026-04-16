@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>لوحة الكاشير</title>
+<style>
+  /* ===== إعداد عام ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: linear-gradient(180deg, #fff5ed, #ffe0c7);
+    color: #333;
+    padding: 20px;
+  }
+
+  /* ===== الأزرار العلوية ===== */
+  .top-bar {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .top-bar button {
+    background: #ff8800;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    margin: 0 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  .top-bar button:hover {
+    background: #e26e00;
+  }
+
+  /* ===== البطاقات ===== */
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+
+  .card h2, .card h3 {
+    text-align: center;
+    margin-bottom: 16px;
+    color: #ff8800;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+
+  /* ===== الأزرار ===== */
+  button {
+    background-color: #ff8800;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 4px;
+  }
+  button:hover {
+    background-color: #e67300;
+  }
+
+  /* ===== الجدول ===== */
+  table {
+    direction: rtl;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  th {
+    background: #ff8800;
+    color: white;
+    padding: 10px;
+    font-weight: 600;
+  }
+
+  td {
+    background: #fff9f3;
+    padding: 10px;
+    border-bottom: 1px solid #ffe0c2;
+    font-weight: 500;
+  }
+
+  tr:nth-child(even) td {
+    background: #fff3e8;
+  }
+
+  tr:hover td {
+    background: #ffe8d2;
+  }
+
+  /* ===== استجابة للجوال ===== */
+  @media (max-width: 600px) {
+    .card {
+      padding: 14px;
+    }
+    table, th, td {
+      font-size: 14px;
+    }
+    input {
+      font-size: 14px;
+    }
+  }
+</style>
+</head>
+
+<body class="dark">
+
+<!-- ===== أزرار اللغة ===== -->
+<div class="top-bar">
+  <button onclick="setLang('ar')">AR</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+
+<!-- ===== البطاقة الأولى ===== -->
+<div class="card">
+  <h2 id="title">لوحة الكاشير</h2>
+
+  <input id="phone" placeholder="رقم الجوال">
+
+  <div style="text-align:center;">
+    <button id="addCustomerBtn" onclick="addCustomer()">➕ إضافة زبون</button>
+    <button id="addPointBtn" onclick="addPoint()">⭐ إضافة نقطة</button>
+    <button id="rewardBtn" onclick="giveReward()">🎁 صرف المكافأة</button>
+  </div>
+</div>
+
+<!-- ===== البطاقة الثانية ===== -->
+<div class="card">
+  <h3 id="listTitle">قائمة الزبائن</h3>
+  <table>
+    <thead>
+      <tr>
+        <th id="thPhone">الجوال</th>
+        <th id="thPoints">النقاط</th>
+        <th id="thReward">المكافأة</th>
+        <th id="thLast">آخر تحديث</th>
+      </tr>
+    </thead>
+    <tbody id="customersTable"></tbody>
+  </table>
+</div>
+
+<!-- ===== السكربت ===== -->
+<script>
+let customers = JSON.parse(localStorage.getItem("customers") || "{}");
+let currentLang = localStorage.getItem("lang") || "ar";
+
+function save(){
+  localStorage.setItem("customers", JSON.stringify(customers));
+  render();
+}
+
+function today(){ return new Date().toISOString().split("T")[0]; }
+
+function phoneValue(){
+  const val = document.getElementById("phone").value.trim();
+  if(!val){
+    alert(currentLang==="ar" ? "ادخل رقم الجوال" : "Enter phone number");
+    return null;
+  }
+  if(val.length !== 10){
+    alert(currentLang==="ar" ? "رقم الجوال يجب أن يكون 10 أرقام" : "Phone number must be 10 digits");
+    return null;
+  }
+  if(!/^\d+$/.test(val)){
+    alert(currentLang==="ar" ? "رقم الجوال يجب أن يحتوي على أرقام فقط" : "Phone number must contain digits only");
+    return null;
+  }
+  return val;
+}
+
+function addCustomer(){
+  const phone = phoneValue();
+  if(!phone) return;
+  if(!customers[phone]){
+    customers[phone] = {points:0,rewardTaken:false,lastUpdate:today()};
+    save();
+  } else alertText("exists");
+}
+
+function addPoint(){
+  const phone = phoneValue();
+  if(!phone) return;
+  if(customers[phone]){
+    customers[phone].points++;
+    customers[phone].lastUpdate = today();
+    save();
+  } else alertText("notFound");
+}
+
+function giveReward(){
+  const phone = phoneValue();
+  if(!phone) return;
+  if(customers[phone] && customers[phone].points >= 5){
+    customers[phone].points = 0;
+    customers[phone].rewardTaken = true;
+    customers[phone].lastUpdate = today();
+    save();
+  } else alertText("notEligible");
+}
+
+function render(){
+  const table = document.getElementById("customersTable");
+  table.innerHTML = "";
+  Object.keys(customers).forEach(p=>{
+    const c = customers[p];
+    table.innerHTML += `
+      <tr>
+        <td>${p}</td>
+        <td>${c.points}</td>
+        <td>${c.points>=5 ? (currentLang==="ar"?"🎁 نعم":"🎁 Yes") : (currentLang==="ar"?"❌ لا":"❌ No")}</td>
+        <td>${c.lastUpdate}</td>
+      </tr>
+    `;
+  });
+}
+
+function alertText(type){
+  const messages = {
+    ar: {
+      exists: "الزبون موجود مسبقًا ✅",
+      notFound: "الزبون غير موجود ❌",
+      notEligible: "غير مستحق للمكافأة بعد ⚠️"
+    },
+    en: {
+      exists: "Customer already exists ✅",
+      notFound: "Customer not found ❌",
+      notEligible: "Not eligible for reward yet ⚠️"
+    }
+  };
+  alert(messages[currentLang][type]);
+}
+
+function setLang(l){
+  currentLang = l;
+  localStorage.setItem("lang", l);
+  document.documentElement.lang = l;
+  document.documentElement.dir = l==="ar"?"rtl":"ltr";
+  document.querySelector("table").style.direction = l==="ar"?"rtl":"ltr";
+
+  if(l==="ar"){
+    document.getElementById("title").innerText = "لوحة الكاشير";
+    document.getElementById("phone").placeholder = "رقم الجوال";
+    document.getElementById("addCustomerBtn").innerText = "➕ إضافة زبون";
+    document.getElementById("addPointBtn").innerText = "⭐ إضافة نقطة";
+    document.getElementById("rewardBtn").innerText = "🎁 صرف المكافأة";
+    document.getElementById("listTitle").innerText = "قائمة الزبائن";
+    document.getElementById("thPhone").innerText = "الجوال";
+    document.getElementById("thPoints").innerText = "النقاط";
+    document.getElementById("thReward").innerText = "المكافأة";
+    document.getElementById("thLast").innerText = "آخر تحديث";
+  } else {
+    document.getElementById("title").innerText = "Cashier Dashboard";
+    document.getElementById("phone").placeholder = "Phone Number";
+    document.getElementById("addCustomerBtn").innerText = "➕ Add Customer";
+    document.getElementById("addPointBtn").innerText = "⭐ Add Point";
+    document.getElementById("rewardBtn").innerText = "🎁 Give Reward";
+    document.getElementById("listTitle").innerText = "Customers List";
+    document.getElementById("thPhone").innerText = "Phone";
+    document.getElementById("thPoints").innerText = "Points";
+    document.getElementById("thReward").innerText = "Reward";
+    document.getElementById("thLast").innerText = "Last Update";
+  }
+
+  render();
+}
+
+setLang(currentLang);
+render();
+</script>
+
+</body>
+</html>

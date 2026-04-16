@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Burgrito — Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index-en.html">Burgrito</a>
+      <nav class="main-nav" id="nav2">
+        <a href="index-en.html">Home</a>
+        <a href="menu-en.html" class="active">Menu</a>
+        <a href="about-en.html">About</a>
+        <a href="sources-en.html">Meat Sources</a>
+        <a href="contact-en.html">Contact</a>
+        <!-- Language switch -->
+        <div class="lang-switch">
+          <button id="lang-toggle" class="lang-btn">
+            <img id="lang-flag" src="icons/flag.png" alt=""/>
+          </button>
+        </div>
+      </nav>
+      <button id="mobile-toggle-2" class="mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Loyalty -->
+<div class="loyalty-box">
+  <h3 id="loyaltyTitle">Loyalty Points</h3>
+  <input id="phoneInput" type="text" placeholder="Phone Number">
+  <button id="showBtn" onclick="showPoints()">Show Points</button>
+  <p id="pointsResult"></p>
+</div>
+
+
+  <!-- Hero Section (خلفية واحدة فقط من CSS) -->
+  <div class="hero hero-menu"></div>
+
+  <!-- Menu -->
+  <div id="menu" class="menu-grid"></div>
+  
+  <script src="js/loyalty.js"></script>
+
+  <!-- ===== Menu Page ===== -->
+  <main class="container menu-page">
+    <h1 class="page-title">Menu</h1>
+
+    <!-- ===== Burgers Section ===== -->
+    <section class="menu-section">
+      <h2>Burgers</h2>
+      <div class="menu-grid">
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicBurger/bacon br.jpg" alt="Bacon Burger"/>
+            <div class="mi-info">
+              <h3>Bacon Burger</h3>
+              <p>Beef burger with bacon slices and rich sauce <br>850kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">29 SAR</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicBurger/calssic br.jpg" alt="Classic Burger"/>
+            <div class="mi-info">
+              <h3>Classic Burger</h3>
+              <p>Classic chicken burger with delicious flavor <br>690kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">22 SAR</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicBurger/double.jpg" alt="Double Smash"/>
+            <div class="mi-info">
+              <h3>Double Smash</h3>
+              <p>Juicy double smash beef burger  <br>780kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">29 SAR</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicBurger/maple.png" alt="Maple Chicken Burger"/>
+            <div class="mi-info">
+              <h3>Maple Chicken Burger</h3>
+              <p>Chicken burger with maple sauce, sweet and savory balanced  <br>720kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">22 SAR</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicBurger/sagnature.jpg" alt="Signature Burger"/>
+            <div class="mi-info">
+              <h3>Signature Burger</h3>
+              <p>Special burger with our unique blend  <br>800kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">29 SAR</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicBurger/truffle.jpg" alt="Truffle Burger"/>
+            <div class="mi-info">
+              <h3>Truffle Burger</h3>
+              <p>Beef burger with truffle sauce  <br>820kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">29 SAR</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== Sides Section ===== -->
+    <section class="menu-section">
+      <h2>Sides</h2>
+      <div class="menu-grid">
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/stake.jpg" alt="Philly Cheesesteak"/>
+            <div class="mi-info">
+              <h3>Philly Cheesesteak</h3>
+              <p>Grilled beef slices with melted cheese in a soft bun full of flavor  <br>650kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">24 SAR</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/poo.jpg" alt="Fries Classic"/>
+            <div class="mi-info">
+              <h3>Fries Classic</h3>
+              <p>Crispy and delicious fries  <br>350kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">7 SAR</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/fd.jpg" alt="Potato Dynamite"/>
+            <div class="mi-info">
+              <h3>Potato Dynamite</h3>
+              <p>Fried potatoes with creamy spicy dynamite sauce  <br>520kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">19 SAR</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/ft.jpg" alt="Truffle Potatoes"/>
+            <div class="mi-info">
+              <h3>Truffle Potatoes</h3>
+              <p>Fried potatoes topped with rich truffle sauce  <br>480kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">19 SAR</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/salad.jpg" alt="Caesar Salad"/>
+            <div class="mi-info">
+              <h3>Caesar Salad</h3>
+              <p>Fresh lettuce with chicken, Caesar dressing, and Parmesan cheese  <br>310kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">19 SAR</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/str.jpg" alt="Chicken Strips"/>
+            <div class="mi-info">
+              <h3>Chicken Strips</h3>
+              <p>Crispy seasoned chicken strips fried golden  <br>560kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">18 SAR</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/taco.jpg" alt="Chicken Strips Tacos"/>
+            <div class="mi-info">
+              <h3>Chicken Strips Tacos</h3>
+              <p>Tacos filled with crispy chicken strips and rich sauces  <br>420kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">15 SAR</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== Drinks Section ===== -->
+    <section class="menu-section">
+      <h2>Drinks</h2>
+      <div class="menu-grid">
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/drinks.png" alt="Soft Drinks"/>
+            <div class="mi-info">
+              <h3>Soft Drinks</h3>
+              <p>Cola / Citrus / Dew / 7Up / Pepsi  <br>170kcal</p>
+            </div>
+          </div>
+          <div class="mi-right">4 SAR</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="mi-left">
+            <img src="menuPicMore/water.jpeg" alt="Water"/>
+            <div class="mi-info">
+              <h3>Water </h3>
+              <p> 0kcal </p>
+            </div>
+          </div>
+          <div class="mi-right">1 SAR</div>
+        </div>
+
+        <!-- ===== Chefs / Characters Section ===== -->
+        <section class="chefs-section container">
+          <h2 class="section-title">Delivery Service</h2>
+          <div class="chefs-grid">
+            <a href="https://url.mykeeta.com/dMdmYrez" target="_blank" class="chef-card">
+                <img src="icons/keeta.png" alt=""/>
+              <h3>Keeta</h3>
+              <p>Go to the application</p>
+            </a>
+
+            <a href="https://hungerstation.go.link/?c=SA&s=c&v=95531&so=mls&adj_t=1sdhhuza_1spi9ypp&adj_og_title=%D8%A8%D9%88%D8%B1%D8%BA%D8%B1%D9%8A%D8%AA%D9%88&adj_og_image=https://images.deliveryhero.io/image/hungerstation/restaurant/logo_ar/5f46c76b8d236183f6dd3d1865fb38ac.jpg" target="_blank" class="chef-card">
+                <img src="icons/hung.png" alt=""/>
+              <h3>Hungerstation</h3>
+              <p>Go to the application</p>
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer small">
+    <div class="container footer-grid">
+      <div>
+        <h4>Burgrito</h4>
+        <p>Quality and unforgettable taste.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Phone: 0565087866</p>
+      </div>
+    </div>
+    <div class="container copyright">
+      © <span id="year2"></span> Burgrito
+    </div>
+  </footer>
+
+  <!-- ===== Scripts ===== -->
+  <script>
+    document.getElementById("year2").textContent = new Date().getFullYear();
+
+    // Language switch to Arabic page
+    const langBtn = document.getElementById("lang-toggle");
+    langBtn.addEventListener("click", () => {
+      const currentPage = window.location.pathname.split("/").pop();
+      const pages = {
+        "menu-en.html": "menu.html",
+        "index-en.html": "index.html",
+        "about-en.html": "about.html",
+        "sources-en.html": "sources.html",
+        "contact-en.html": "contact.html",
+      };
+      if (pages[currentPage]) {
+        window.location.href = pages[currentPage];
+      } else {
+        window.location.href = "menu.html";
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

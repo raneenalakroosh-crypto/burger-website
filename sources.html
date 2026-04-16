@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Burgrito — مصادر اللحوم</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Burgrito</a>
+      <nav class="main-nav" id="nav2">
+        <a href="index.html">الرئيسية</a>
+        <a href="menu.html">المنيو</a>
+        <a href="about.html">من نحن</a>
+        <a href="sources.html" class="active">مصادر اللحوم</a>
+        <a href="contact.html">تواصل</a>
+        <!-- زر تبديل اللغة -->
+        <div class="lang-switch">
+          <button id="lang-toggle" class="lang-btn" aria-label="تبديل اللغة">
+          
+            <img id="lang-flag" src="icons/united-states_1.png" alt=""/>
+          </button>
+        </div>
+      </nav>
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="قائمة">☰</button>
+    </div>
+  </header>
+
+  <main class="container about-page">
+    <h1 class="page-title">مصادر اللحوم لدينا</h1>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>في Burgrito، نحرص على استخدام لحوم عالية الجودة من شركتنا مباشرة لضمان نكهة وطعم لا مثيل له. جميع لحومنا:</p><br><br>
+        <ul>
+          <li>مأخوذة من مزرعتنا ومصادرنا الخاصة، لضمان أفضل معايير الجودة.</li>
+          <li>طازجة يوميًا وتخضع لإجراءات سلامة الغذاء الصارمة.</li>
+          <li>خالية من المواد الحافظة الصناعية.</li>
+        </ul>
+        <p>نؤمن أن البرجر الرائع يبدأ بلحم ممتاز، ولذلك نتابع كل خطوة من مزرعتنا إلى طبقكم لضمان تجربة طعام لا تُنسى.</p>
+        <a href="https://www.ahd-trade.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAPr_KtleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaf0AJuOGZBm4gJQ1V9M78q4AIR1647O3qooOR6nMukBwv2UAmXAMHnFXKJ_Kg_aem_IaH7SNnxXjMXygIGqwwCeQ" target="_blank" class="btn btn-primary" style="margin-top:12px;">موقع شركتنا للدواجن</a>
+      </div>
+      <div class="about-image">
+        <img src="sorucesPic/ch1.png" alt=""/>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="sorucesPic/ch.png" alt=""/>
+      </div>
+      <div class="about-text">
+        <p>نحرص على تقديم لحوم طازجة يوميًا لضمان تجربة برجر ممتازة، مع الالتزام بأعلى معايير الجودة والنظافة.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer small">
+    <div class="container footer-grid">
+      <div><h4>Burgrito</h4><p>جودة وطعم لا يُنسى</p></div>
+      <div>
+        <a href="tel:0565087866" class="footer-icon" aria-label="هاتف">
+          <img src="icons/phone-call.png" alt="هاتف"/>
+        </a>
+        <a href="https://www.instagram.com/burgrito.sa" target="_blank" class="footer-icon" aria-label="إنستقرام">
+          <img src="icons/instagram.png" alt="إنستقرام"/>
+        </a>
+        <a href="https://www.tiktok.com/@burgrito.sa" target="_blank" class="footer-icon" aria-label="تيك توك">
+          <img src="icons/tik-tok (1).png" alt="تيك توك"/>
+        </a>
+      </div>
+    </div>
+    <div class="container copyright">
+      © <span id="year-sources"></span> Burgrito
+    </div>
+  </footer>
+
+  <script>
+    // تحديث السنة تلقائيًا في الفوتر
+    document.getElementById("year-sources").textContent = new Date().getFullYear();
+
+    // زر اللغة للتحويل للنسخة الإنجليزية
+    const langBtn = document.getElementById("lang-toggle");
+    langBtn.addEventListener("click", () => {
+      window.location.href = "sources-en.html";
+    });
+
+    // زر القائمة للموبايل
+    const mobileToggle = document.getElementById("mobile-toggle");
+    const navMenu = document.getElementById("nav2");
+    mobileToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>

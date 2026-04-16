@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Burgrito — About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index-en.html">Burgrito</a>
+      <nav class="main-nav">
+        <a href="index-en.html">Home</a>
+        <a href="menu-en.html">Menu</a>
+        <a href="about-en.html" class="active">About</a>
+        <a href="sources-en.html">Meat Sources</a>
+        <a href="contact-en.html">Contact</a>
+
+        <!-- زر اللغة -->
+        <div class="lang-switch">
+          <button id="lang-toggle" class="lang-btn">
+           
+                 <img id="lang-flag"  src="icons/flag.png" alt=""/>
+          </button>
+        </div>
+      </nav>
+      <button id="mobile-toggle-3" class="mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main class="container about-page">
+    <h1 class="page-title">Our Story</h1>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>At Burgrito, we create a burger experience worth remembering. We believe a great burger starts with premium ingredients. Our meat is always fresh, and our sauces are crafted with care to deliver a balance of richness and flavor.</p><br>
+        <p>From day one, we’ve focused on quality and speed — offering a simple, comfortable, and flavorful dining experience that stays with you.</p><br>
+        <a class="btn btn-primary" href="menu-en.html">Explore Our Menu</a>
+
+        <!-- الصورة الثانية الثابتة -->
+        <div class="second-image-container">
+          <img src="aboutPic/about1.jpg" alt="Team working in Burgrito kitchen"/>
+        </div>
+      </div>
+
+      <div class="about-image">
+        <img src="aboutPic/team.jpg" alt="Burgrito Team"/>
+      </div>
+    </div>
+
+    <!-- ===== Values Section ===== -->
+    <section class="values">
+      <h2>Our Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Fresh Ingredients</h3>
+          <p>We select the finest and freshest ingredients to ensure an amazing taste in every bite.</p>
+        </div>
+        <div class="value-card">
+          <h3>Fast & Friendly Service</h3>
+          <p>Our team provides a comfortable, quick, and friendly experience every time you visit.</p>
+        </div>
+        <div class="value-card">
+          <h3>Cleanliness & Quality</h3>
+          <p>We maintain the highest hygiene and quality standards across all branches.</p>
+        </div>
+        <div class="value-card">
+          <h3>Trusted Meat Sources</h3>
+          <p>We proudly source our meat from our own company to ensure exceptional freshness and flavor.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><h4>Burgrito</h4><p>A taste that defines us.</p></div>
+      <div><h4>Links</h4><ul><li><a href="menu-en.html">Menu</a></li></ul></div>
+      <div><h4>Contact</h4><p>Phone: 0565087866</p></div>
+    </div>
+    <div class="container copyright">
+      © <span id="year3"></span> Burgrito
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    document.getElementById("year3").textContent = new Date().getFullYear();
+
+    // === Language Switch ===
+    const langBtn = document.getElementById("lang-toggle");
+    const flagImg = document.getElementById("lang-flag");
+
+    langBtn.addEventListener("click", () => {
+      const currentPage = window.location.pathname.split("/").pop();
+
+      const pages = {
+        "index.html": "index-en.html",
+        "menu.html": "menu-en.html",
+        "about.html": "about-en.html",
+        "sources.html": "sources-en.html",
+        "contact.html": "contact-en.html",
+        "index-en.html": "index.html",
+        "menu-en.html": "menu.html",
+        "about-en.html": "about.html",
+        "sources-en.html": "sources.html",
+        "contact-en.html": "contact.html",
+      };
+
+      if (pages[currentPage]) {
+        window.location.href = pages[currentPage];
+      } else {
+        window.location.href = "index-en.html";
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

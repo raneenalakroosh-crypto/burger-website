@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>دخول الموظف</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="top-bar">
+  <button onclick="setLang('ar')">AR</button>
+  <button onclick="setLang('en')">EN</button>
+</div>
+
+<div class="card">
+  <h2 id="loginTitle"></h2>
+
+  <input id="password" type="password">
+
+  <button onclick="login()">دخول</button>
+</div>
+
+<script src="js/lang.js"></script>
+<script>
+  document.getElementById("loginTitle").innerText = t("login");
+  document.getElementById("password").placeholder = t("password");
+
+  function login() {
+    const pass = document.getElementById("password").value;
+    if (pass === "1234") {
+      localStorage.setItem("staffLogged", "yes");
+      location.href = "staff-dashboard.html";
+    } else {
+      alert("كلمة المرور خطأ");
+    }
+  }
+</script>
+
+</body>
+</html>

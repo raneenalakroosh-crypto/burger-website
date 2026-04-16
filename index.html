@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Burgrito — الرئيسية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== رأس الصفحة ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Burgrito</a>
+
+      <nav class="main-nav" id="nav">
+        <a href="index.html" class="active">الرئيسية</a>
+        <a href="menu.html">المنيو</a>
+        <a href="about.html">من نحن</a>
+        <a href="sources.html">مصادر اللحوم</a>
+        <a href="contact.html">تواصل</a>
+       
+        <!-- زر اللغة -->
+        <div class="lang-switch">
+          <button id="lang-toggle" class="lang-btn" aria-label="تبديل اللغة">
+           
+            <img id="lang-flag" src="icons/united-states_1.png" alt=""/>
+          </button>
+        </div>
+      </nav>
+
+      <!-- زر القائمة للموبايل -->
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="قائمة">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== قسم الهيرو ===== -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>استمتع بالبرجر <span>بأسلوب Burgrito</span></h1>
+      <p>نكهة فريدة، مكونات طازجة وتجربة لا تُنسى — اطلب الآن أو زورنا في المتجر.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="menu.html">اطلب الآن</a>
+        <a class="btn btn-outline" href="about.html">من نحن</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== قسم المعرض ===== -->
+  <section class="gallery container">
+    <h2 class="section-title">معرضنا</h2>
+    <div class="gallery-grid">
+      <img src="imagesBurger/b1.jpg" alt="برجر 1">
+      <img src="imagesBurger/b2.jpg" alt="برجر 2">
+      <img src="imagesBurger/b3.jpg" alt="بطاطس مقلية">
+      <img src="imagesBurger/b4.jpg" alt="برجر 3">
+    </div>
+  </section>
+
+  <!-- ===== قسم الأطباق المميزة ===== -->
+  <section class="container featured">
+    <h2 class="section-title">الأطباق المميزة</h2>
+    <div class="cards">
+      <article class="card">
+        <img src="imagesMost/tk.jpg" alt="تاكو قطع الدجاج"/>
+        <div class="card-body">
+          <h3>تاكو قطع الدجاج</h3>
+          <p>قطع دجاج مقرمشة محشوة في تاكو مع صوص غني.</p>
+          <div class="price">15 ريال</div>
+        </div>
+      </article>
+      
+      <article class="card">
+        <img src="menuPicBurger/sagnature.jpg" alt="برجر مميز"/>
+        <div class="card-body">
+          <h3> سجنتشر</h3>
+          <p>برجر خاص بمزيج نكهات فريد.</p>
+          <div class="price">29 ريال</div>
+        </div>
+      </article>
+      
+      <article class="card">
+        <img src="imagesMost/stake.jpg" alt="فيلي تشيز ستيك"/>
+        <div class="card-body">
+          <h3>فيلي تشيز ستيك</h3>
+          <p>شرائح لحم مشوية مع جبن مذاب في خبز طري غني بالنكهة.</p>
+          <div class="price">24 ريال</div>
+        </div>
+      </article>
+    </div>
+    <div class="center">
+      <a class="btn btn-primary" href="menu.html">عرض القائمة كاملة</a>
+    </div>
+  </section>
+
+  <!-- ===== تذييل الصفحة ===== -->
+  <footer class="site-footer small">
+    <div class="container footer-grid">
+      <div>
+        <h4>Burgrito</h4>
+        <p>جودة وطعم لا يُنسى.</p>
+      </div>
+      <div>
+        <h4>تواصل</h4>
+        <div class="footer-contact">
+          <a href="tel:0565087866" class="footer-icon" aria-label="هاتف">
+            <img src="icons/phone-call.png" alt="هاتف"/>
+          </a>
+          <a href="https://www.instagram.com/burgrito.sa" target="_blank" class="footer-icon" aria-label="إنستقرام">
+            <img src="icons/instagram.png" alt="إنستقرام"/>
+          </a>
+          <a href="https://www.tiktok.com/@burgrito.sa" target="_blank" class="footer-icon" aria-label="تيك توك">
+            <img src="icons/tik-tok (1).png" alt="تيك توك"/>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright">
+      © <span id="year2"></span> Burgrito
+    </div>
+  </footer>
+
+  <!-- ===== جافاسكربت ===== -->
+  <script>
+    // تحديث السنة تلقائيًا
+    document.getElementById("year2").textContent = new Date().getFullYear();
+
+    // === تبديل اللغة ===
+    const langBtn = document.getElementById("lang-toggle");
+    langBtn.addEventListener("click", () => {
+      const currentPage = window.location.pathname.split("/").pop();
+
+      // الصفحات المترابطة
+      const pages = {
+        "index.html": "index-en.html",
+        "menu.html": "menu-en.html",
+        "about.html": "about-en.html",
+        "sources.html": "sources-en.html",
+        "contact.html": "contact-en.html",
+        "index-en.html": "index.html",
+        "menu-en.html": "menu.html",
+        "about-en.html": "about.html",
+        "sources-en.html": "sources.html",
+        "contact-en.html": "contact.html",
+      };
+
+      if (pages[currentPage]) {
+        window.location.href = pages[currentPage];
+      } else {
+        window.location.href = "index.html";
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

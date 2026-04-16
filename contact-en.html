@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Burgrito — Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index-en.html">Burgrito</a>
+      <nav class="main-nav">
+        <a href="index-en.html">Home</a>
+        <a href="menu-en.html">Menu</a>
+        <a href="about-en.html">About</a>
+        <a href="sources-en.html">Meat Sources</a>
+        <a href="contact-en.html" class="active">Contact</a>
+
+        <!-- زر اللغة -->
+        <div class="lang-switch">
+          <button id="lang-toggle" class="lang-btn">
+           <img id="lang-flag" src="icons/flag.png" alt=""/>
+          </button>
+        </div>
+      </nav>
+      <button id="mobile-toggle-4" class="mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main class="container contact-page">
+    <h1 class="page-title">Contact Us</h1>
+
+    <div class="contact-grid">
+      <!-- الصورة على اليسار -->
+      <div class="contact-image">
+        <img src="aboutPic/about.jpg" alt="Contact Image" />
+      </div>
+
+      <!-- الفورم على اليمين -->
+      <div class="contact-form">
+        <form id="contactForm" action="#" method="post" onsubmit="return submitForm(event)">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" rows="6" required></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- معلومات التواصل -->
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <p>Phone: 0565087866</p>
+      <p>Fatimah Al-Zahraa Street, Abdullah Fouad, Dammam 32236</p>
+
+      <h4>Working Hours</h4>
+      <p>Sunday – Thursday: 12:00 PM – 11:00 PM</p>
+      <p>Friday: 4:00 PM – 12:00 AM</p>
+      <p>Saturday: 12:00 PM – 11:00 PM</p>
+
+      <!-- الخريطة -->
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps?q=Burgrito+Dammam&output=embed"
+          width="100%" 
+          height="250" 
+          style="border:0; border-radius:12px;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <a href="https://maps.app.goo.gl/Nj6jwn1mLQF1k5Qk8?g_st=iw" target="_blank" class="map-button">
+          Open in Google Maps
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><h4>Burgrito</h4><p>Stay Connected</p></div>
+      
+      <div> 
+        <a href="tel:0565087866" class="footer-icon" aria-label="Phone">
+          <img src="icons/phone-call.png" alt="Phone Icon"/>
+        </a>
+        <a href="https://www.instagram.com/burgrito.sa?igsh=MWU1YTM3emZ2NHd1dw==" target="_blank" class="footer-icon" aria-label="Instagram">
+          <img src="icons/instagram.png" alt="Instagram Icon"/>
+        </a>
+        <a href="https://www.tiktok.com/@burgrito.sa?_r=1&_t=ZS-93UBBjLyc9x" target="_blank" class="footer-icon" aria-label="TikTok">
+          <img src="icons/tik-tok (1).png" alt="TikTok Icon"/>
+        </a> 
+      </div>
+
+      <div><h4>Links</h4><ul><li><a href="menu-en.html">Menu</a></li></ul></div>
+    </div>
+
+    <div class="container copyright">
+      © <span id="year4"></span> Burgrito
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    document.getElementById("year4").textContent = new Date().getFullYear();
+
+    // === Language Switch ===
+    const langBtn = document.getElementById("lang-toggle");
+    const flagImg = document.getElementById("lang-flag");
+
+    langBtn.addEventListener("click", () => {
+      const currentPage = window.location.pathname.split("/").pop();
+
+      // الصفحات المترابطة بين اللغتين
+      const pages = {
+        "index.html": "index-en.html",
+        "menu.html": "menu-en.html",
+        "about.html": "about-en.html",
+        "sources.html": "sources-en.html",
+        "contact.html": "contact-en.html",
+        "index-en.html": "index.html",
+        "menu-en.html": "menu.html",
+        "about-en.html": "about.html",
+        "sources-en.html": "sources.html",
+        "contact-en.html": "contact.html",
+      };
+
+      if (pages[currentPage]) {
+        window.location.href = pages[currentPage];
+      } else {
+        window.location.href = "contact-en.html";
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

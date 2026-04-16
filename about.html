@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Burgrito — من نحن</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Burgrito</a>
+      <nav class="main-nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="menu.html">المنيو</a>
+        <a href="about.html" class="active">من نحن</a>
+        <a href="sources.html">مصادر اللحوم</a>
+        <a href="contact.html">تواصل</a>
+
+        <!-- زر تبديل اللغة -->
+        <div class="lang-switch">
+          <button id="lang-toggle" class="lang-btn" aria-label="تبديل اللغة">
+            
+            <img src="icons/united-states_1.png" alt=""/>
+          </button>
+        </div>
+      </nav>
+      <button id="mobile-toggle-3" class="mobile-toggle" aria-label="قائمة">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main class="container about-page">
+    <h1 class="page-title">قصتنا</h1>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>في Burgrito نصنع تجربة تُحكى لا تُنسى، نؤمن أن البرجر الجيد يبدأ من مكونات ممتازة. نختار لحوماً طازجة، ونصنع صوصاتنا الداخلية بعناية. هدفنا أن نقدم تجربة برجر فاخرة وبسيطة في نفس الوقت.</p><br>
+        <p>من اليوم الأول، ركزنا على الجودة والسرعة — تجربة تناول طعام بسيطة، مريحة، وبنكهة تبقى في الذاكرة.</p><br>
+        <a class="btn btn-primary" href="menu.html">اطّلع على المنيو</a>
+        
+        <!-- الصورة الثانية ثابتة أسفل النص -->
+        <div class="second-image-container">
+          <img src="aboutPic/about1.jpg" alt=""/>
+        </div>
+      </div> 
+
+      <div class="about-image">
+        <img src="aboutPic/team.jpg" alt=""/>
+      </div>
+    </div>
+
+    <!-- ===== Values Section ===== -->
+    <section class="values">
+      <h2>قيمنا</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>مكونات طازجة</h3>
+          <p>نختار أفضل المكونات الطازجة لضمان طعم رائع في كل وجبة.</p>
+        </div>
+        <div class="value-card">
+          <h3>خدمة سريعة وودية</h3>
+          <p>فريقنا يقدم لكم تجربة مريحة وسريعة مع ابتسامة دائمة.</p>
+        </div>
+        <div class="value-card">
+          <h3>نظافة وجودة</h3>
+          <p>نلتزم بأعلى معايير النظافة والجودة في كل فرع.</p>
+        </div>
+        <div class="value-card">
+          <h3>مصادر اللحوم</h3>
+          <p>نحرص على الحصول على أفضل اللحوم الطازجة من شركتنا لضمان الجودة والطعم المميز.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><h4>Burgrito</h4><p>طعم يميزنا.</p></div>
+      <div><h4>روابط</h4><ul><li><a href="menu.html">المنيو</a></li></ul></div>
+      <div><h4>تواصل</h4><p>هاتف: 0565087866</p></div>
+    </div>
+    <div class="container copyright">
+      © <span id="year3"></span> Burgrito
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    document.getElementById("year3").textContent = new Date().getFullYear();
+
+    // === Language Switch ===
+    const langBtn = document.getElementById("lang-toggle");
+    const flagImg = document.getElementById("lang-flag");
+
+    langBtn.addEventListener("click", () => {
+      const currentPage = window.location.pathname.split("/").pop();
+
+      // الصفحات المترابطة بين اللغتين
+      const pages = {
+        "index.html": "index-en.html",
+        "menu.html": "menu-en.html",
+        "about.html": "about-en.html",
+        "sources.html": "sources-en.html",
+        "contact.html": "contact-en.html",
+        "index-en.html": "index.html",
+        "menu-en.html": "menu.html",
+        "about-en.html": "about.html",
+        "sources-en.html": "sources.html",
+        "contact-en.html": "contact.html",
+      };
+
+      if (pages[currentPage]) {
+        window.location.href = pages[currentPage];
+      } else {
+        window.location.href = "about-en.html";
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

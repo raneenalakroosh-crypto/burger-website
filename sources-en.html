@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Burgrito — Meat Sources</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index-en.html">Burgrito</a>
+      <nav class="main-nav" id="nav2">
+        <a href="index-en.html">Home</a>
+        <a href="menu-en.html">Menu</a>
+        <a href="about-en.html">About</a>
+        <a href="sources-en.html" class="active">Meat Sources</a>
+        <a href="contact-en.html">Contact</a>
+
+        <!-- Language Switch -->
+        <div class="lang-switch">
+          <button id="lang-toggle" class="lang-btn">
+              <img id="lang-flag" src="icons/flag.png" alt=""/>
+          </button>
+        </div>
+      </nav>
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main class="container about-page">
+    <h1 class="page-title">Our Meat Sources</h1>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>At Burgrito, we take pride in using premium quality meat sourced directly from our own company to ensure unmatched taste and freshness. All our meat is:</p><br><br>
+        <ul>
+          <li>Sourced from our own farms and trusted facilities, ensuring top quality standards.</li>
+          <li>Freshly prepared daily under strict food safety procedures.</li>
+          <li>Free from artificial preservatives or additives.</li>
+        </ul>
+        <p>We believe that a great burger starts with great meat — that's why we oversee every step from our farms to your plate to deliver a truly unforgettable experience.</p>
+        <a href="https://www.ahd-trade.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAPr_KtleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaf0AJuOGZBm4gJQ1V9M78q4AIR1647O3qooOR6nMukBwv2UAmXAMHnFXKJ_Kg_aem_IaH7SNnxXjMXygIGqwwCeQ" target="_blank" class="btn btn-primary" style="margin-top:12px;">Visit Our Poultry Company</a>
+      </div>
+
+      <div class="about-image">
+        <img src="sorucesPic/ch1.png" alt="Meat source image"/>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="sorucesPic/ch.png" alt="Fresh meat"/>
+      </div>
+      <div class="about-text">
+        <p>We ensure our meat is delivered fresh every day to guarantee the best burger experience, maintaining the highest standards of quality and hygiene.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer small">
+    <div class="container footer-grid">
+      <div><h4>Burgrito</h4><p>Quality and unforgettable taste.</p></div>
+      <div>
+        <a href="tel:0565087866" class="footer-icon" aria-label="Phone">
+          <img src="icons/phone-call.png" alt="Phone"/>
+        </a>
+        <a href="https://www.instagram.com/burgrito.sa" target="_blank" class="footer-icon" aria-label="Instagram">
+          <img src="icons/instagram.png" alt="Instagram"/>
+        </a>
+        <a href="https://www.tiktok.com/@burgrito.sa" target="_blank" class="footer-icon" aria-label="TikTok">
+          <img src="icons/tik-tok (1).png" alt="TikTok"/>
+        </a>
+      </div>
+    </div>
+    <div class="container copyright">
+      © <span id="year-sources"></span> Burgrito
+    </div>
+  </footer>
+
+  <!-- ===== Scripts ===== -->
+  <script>
+    // تحديث السنة تلقائيًا في الفوتر
+    document.getElementById("year-sources").textContent = new Date().getFullYear();
+
+    // زر اللغة للتحويل للنسخة العربية
+    const langBtn = document.getElementById("lang-toggle");
+    langBtn.addEventListener("click", () => {
+      window.location.href = "sources.html";
+    });
+
+    // زر القائمة للموبايل
+    const mobileToggle = document.getElementById("mobile-toggle");
+    const navMenu = document.getElementById("nav2");
+    mobileToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
